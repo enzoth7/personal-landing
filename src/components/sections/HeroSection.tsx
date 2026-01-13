@@ -49,7 +49,7 @@ export default function HeroSection() {
       {/* Contenido */}
       <div className="relative z-10 mx-auto flex min-h-screen max-w-5xl items-center px-6">
         <div className="w-full text-center md:text-left">
-          <p className="mb-4 inline-flex items-center gap-3 text-xs font-medium uppercase tracking-[0.28em] text-slate-300/80">
+          <p className="mb-4 inline-flex items-center gap-3 text-xs font-medium uppercase tracking-[0.28em] text-yellow-400">
       <span className="h-[1px] w-10 bg-white/15" />
       Enzo Thome · Data & Automation
     </p>
