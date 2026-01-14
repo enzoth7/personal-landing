@@ -51,10 +51,13 @@ export default function ContactoSection() {
       className="border-t border-slate-800/80 py-20 sm:py-24"
     >
       <Reveal className="flex max-w-3xl flex-col gap-6">
-        <h2 className="font-display text-2xl text-slate-50 sm:text-3xl">
-          Contacto
-        </h2>
-        <p className="text-lg leading-relaxed text-slate-300">
+<div className="flex items-center gap-3">
+              <span className="h-px w-10 bg-emerald-300/40" />
+              <span className="text-sm uppercase tracking-[0.2em] text-emerald-200/80">
+                Contacto
+              </span>
+</div>
+          <p className="max-w-2xl text-lg leading-relaxed text-slate-300">
           Si creés que puedo ayudarte a ordenar tu situación, escribime directo o contactame por mis redes.
         </p>
         <div className="flex flex-wrap items-center gap-4">
@@ -73,7 +76,7 @@ export default function ContactoSection() {
             {copied ? "Copiado" : "Copiar mail"}
           </button>
         </div>
-        <p className="text-sm text-slate-400">Te responderé lo mas pronto que me sea posible.</p>
+        <p className="text-sm text-slate-400">Te responderé lo más pronto que me sea posible.</p>
       </Reveal>
     </section>
   );

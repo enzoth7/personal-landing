@@ -1,7 +1,11 @@
 'use client';
 
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { motion, useScroll, useTransform, type MotionValue } from 'framer-motion';
 import React from 'react';
+
+const PARALLAX_RANGE = 90;
+
+
 
 function svgToDataUri(svg: string) {
   const encoded = encodeURIComponent(svg).replace(/'/g, '%27').replace(/"/g, '%22');
@@ -23,62 +27,92 @@ function iconPatternDataUri(opacity = 0.05) {
   return svgToDataUri(svg);
 }
 
+type BandProps = {
+  top: string;
+  height: number;
+  rotateDeg: number;
+  speed: number;
+  patternOpacity: number;
+  scrollY: MotionValue<number>;
+};
+
 function Band({
   top,
   height,
   rotateDeg,
   speed,
   patternOpacity,
-}: {
-  top: number;
-  height: number;
-  rotateDeg: number;
-  speed: number;
-  patternOpacity: number;
-}) {
-  const { scrollY } = useScroll();
+  scrollY,
+}: BandProps) {
+const y = useTransform(scrollY, (v) => (v * 0.03) * speed);
+const x = useTransform(scrollY, (v) => (v * 0.015) * speed);
 
-  // CLAMP: no se va al medio de la página
-  const y = useTransform(scrollY, [0, 1200], [0, 120 * speed], { clamp: true });
 
-  const bgImage = iconPatternDataUri(patternOpacity);
 
+  const bgImage = React.useMemo(() => iconPatternDataUri(patternOpacity), [patternOpacity]);
+
+
+
+  
   return (
     <div
-      className="pointer-events-none absolute left-[-35%] right-[-35%]"
+      className="pointer-events-none absolute left-[-40%] right-[-40%] will-change-transform"
       style={{
         top,
         height,
-        transform: `rotate(${rotateDeg}deg)`, // rotación fuera de framer
+        transform: `rotate(${rotateDeg}deg)`,
         transformOrigin: 'center',
       }}
     >
-      <motion.div
-        className="h-full w-full"
-        style={{
-          y, // solo movimiento acá
-          backgroundImage: bgImage,
-          backgroundRepeat: 'repeat',
-          backgroundSize: '240px 120px',
-          opacity: 0.6,
-          mixBlendMode: 'soft-light',
-          filter: 'blur(0.35px)',
-        }}
-      />
+
+<motion.div
+  className="h-full w-full will-change-transform"
+  style={{
+    y,
+    x, // 👈 esto hace que “viaje” diagonal y se perciba más
+    backgroundImage: bgImage,
+    backgroundRepeat: 'repeat',
+    backgroundSize: '240px 120px',
+    mixBlendMode: 'soft-light',
+    opacity: 0.65,
+  }}
+/>
     </div>
   );
 }
 
 export default function BackgroundDiagonals() {
-  return (
-    // IMPORTANTE: solo arriba
-    <div className="pointer-events-none fixed left-0 top-0 z-0 h-[520px] w-full overflow-hidden">
-      {/* Fade hacia abajo para que muera antes del contenido */}
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#0e1117]" />
+  const { scrollY } = useScroll();
 
-      <Band top={-120} height={240} rotateDeg={-12} speed={0.8} patternOpacity={0.045} />
-      <Band top={120}  height={260} rotateDeg={-12} speed={1.0} patternOpacity={0.040} />
-      <Band top={320}  height={220} rotateDeg={-12} speed={1.2} patternOpacity={0.035} />
+  return (
+    <div
+      aria-hidden="true"
+      className="pointer-events-none absolute inset-0 z-10 overflow-hidden"
+    >
+      <Band
+        top="5vh"
+        height={220}
+        rotateDeg={-12}
+        speed={5}
+        patternOpacity={0.04}
+        scrollY={scrollY}
+      />
+      <Band
+        top="45%"
+        height={260}
+        rotateDeg={-12}
+        speed={5}
+        patternOpacity={0.035}
+        scrollY={scrollY}
+      />
+      <Band
+        top="80%"
+        height={240}
+        rotateDeg={-12}
+        speed={5}
+        patternOpacity={0.03}
+        scrollY={scrollY}
+      />
     </div>
   );
 }

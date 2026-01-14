@@ -111,3 +111,41 @@ body {
     transition: none;
   }
 }
+
+html { scroll-behavior: smooth; }
+
+@keyframes tools-marquee-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.tools-marquee-track {
+  animation: tools-marquee-scroll 54s linear infinite;
+  will-change: transform;
+}
+
+.tools-marquee:hover .tools-marquee-track,
+.tools-marquee:focus-within .tools-marquee-track {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tools-marquee {
+    overflow-x: auto;
+  }
+  .tools-marquee-track {
+    animation: none !important;
+    transform: none !important;
+  }
+  .tools-marquee-duplicate {
+    display: none;
+  }
+}
+@keyframes tools-marquee-scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
