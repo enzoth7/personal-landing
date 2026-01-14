@@ -25,11 +25,11 @@ export default function QueHagoSection() {
         <Reveal className="max-w-3xl">
           <ul className="space-y-4">
             <li className="flex items-start gap-3 text-base leading-relaxed text-white/75 sm:text-lg">
-              <span className="mt-[0.7em] h-px w-6 bg-emerald-300/30" aria-hidden="true" />
+              <span className="mt-[0.8em] h-px w-6 bg-emerald-300/30" aria-hidden="true" />
               <span>Base única y ordenada (sin duplicados ni versiones paralelas).</span>
             </li>
             <li className="flex items-start gap-3 text-base leading-relaxed text-white/75 sm:text-lg">
-              <span className="mt-[0.7em] h-px w-6 bg-emerald-300/30" aria-hidden="true" />
+              <span className="mt-[0.8em] h-px w-6 bg-emerald-300/30" aria-hidden="true" />
               <span>Reglas simples para cargar datos sin errores.</span>
             </li>
             <li className="flex items-start gap-3 text-base leading-relaxed text-white/75 sm:text-lg">

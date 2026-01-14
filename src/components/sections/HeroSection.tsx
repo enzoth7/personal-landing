@@ -9,7 +9,7 @@ export default function HeroSection() {
   <div className="absolute inset-0 flex items-end justify-center">
     <div
       className="
-        mb-[40px]
+        mb-70
         h-[820px] w-[820px]
         rounded-full
         blur-2xl
@@ -20,38 +20,23 @@ export default function HeroSection() {
   </div>
 
   {/* Imagen */}
-  <div className="relative md:translate-x-24 lg:translate-x-40">
+<div className="relative translate-y-20 md:translate-x-24 lg:translate-x-40">
     <Image
-      src="/autor.png"
-      alt="Retrato profesional"
-      width={1100}
-      height={1400}
-      priority
-      className="
-        mb-[-30px]
-        w-[min(860px,94vw)]
-        h-auto
-        object-contain
-        opacity-95
-        drop-shadow-[0_70px_140px_rgba(0,0,0,0.7)]
-      "
-    />
+  src="/autor1.png"
+  alt="Retrato profesional"
+  width={1152}
+  height={2048}
+  priority
+  className="
+    mb-[60px]
+w-[min(500px,200vw)]
+    h-auto
+    object-contain
+    opacity-95
+    drop-shadow-[0_70px_140px_rgba(0,0,0,0.7)]
+  "
+/>
 
-    {/* Spotlight cara (esto es lo que te falta) */}
-    <div
-      className="
-        pointer-events-none
-        absolute
-        left-[52%] top-[11%]
-        h-[250px] w-[280px]
-        -translate-x-1/2
-        rounded-full
-        blur-2xl
-        mix-blend-screen
-        opacity-70
-        bg-[radial-gradient(circle,rgba(255,255,255,0.35)_0%,rgba(255,255,255,0.10)_35%,rgba(255,255,255,0)_70%)]
-      "
-    />
   </div>
 </div>
 

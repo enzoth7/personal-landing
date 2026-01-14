@@ -58,7 +58,7 @@ export default function ContactoSection() {
               </span>
 </div>
           <p className="max-w-2xl text-lg leading-relaxed text-slate-300">
-          Si creés que puedo ayudarte a ordenar tu situación, escribime directo o contactame por mis redes.
+          Si sentís que necesitás ordenar tu situación, escribime directo.
         </p>
         <div className="flex flex-wrap items-center gap-4">
           <a

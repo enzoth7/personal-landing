@@ -33,12 +33,12 @@ export default function QuienSoySection() {
 <Reveal className="relative">
                 <div className="relative mx-auto w-full max-w-[300px] md:max-w-[360px] aspect-[4/5] overflow-hidden rounded-[24px] border border-white/10 bg-white/[0.02]">
   <Image
-    src="/presentehoy1.jpg"
-    alt="Enzo trabajando hoy"
+    src="/presente.jpg"
+    alt="Presente"
     fill
-    quality={95}
-                    className="object-cover opacity-90"
-                    sizes="(min-width: 1024px) 360px, 80vw"
+    quality={100}
+    className="object-cover opacity-90"
+    sizes="(min-width: 1024px) 950px, 80vw"
     priority
   />
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-slate-950/20 to-transparent" />
@@ -59,12 +59,12 @@ export default function QuienSoySection() {
 <div className="grid gap-4">
                 <div className="relative mx-auto w-full max-w-[300px] md:max-w-[360px] aspect-[4/5] overflow-hidden rounded-[24px] border border-white/10 bg-white/[0.02]">
                   <Image
-                    src="/admin.png"
+                    src="/admin2.png"
                     alt="Foto administrativa"
                     fill
                     quality={95}
                     className="object-cover opacity-90"
-                    sizes="(min-width: 1024px) 360px, 80vw"
+                    sizes="(min-width: 1024px) 950px, 200vw"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-slate-950/20 to-transparent" />
                 </div>

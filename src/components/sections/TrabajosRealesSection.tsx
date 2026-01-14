@@ -21,15 +21,15 @@ const trabajos: Trabajo[] = [
     subtitle: "Operación chica · Control mensual",
     body:
       "Dejé una lectura mensual clara a partir de información que ya existía, sin duplicados ni versiones paralelas.",
-    images: ["/1aa.png", "/1bb.png","/1cc.png"],
+    images: ["/ejemplos/1aa.png", "/ejemplos/1bb.png","/ejemplos/1cc.png"],
 
   },
   {
-    title: "Presupuestos interactivos ágiles y confiables",
+    title: "Presupuestos ágiles y confiables",
     subtitle: "Empresas de servicios · Presupuestación frecuente",
     body:
       "Ordené presupuestos para que calcular trabajos sea rápido, consistente y sin tener que “pensar todo de nuevo” cada vez.",
-        images: ["/2aa.png","/2bb.png","/2cost.png"],
+        images: ["/ejemplos/2aa.png","/ejemplos/2bb.png","/ejemplos/2cost.png"],
 
   },
   {
@@ -37,7 +37,7 @@ const trabajos: Trabajo[] = [
     subtitle: "Equipos chicos · Tareas recurrentes",
     body:
       "Estructuré tareas, hábitos y procesos para que el sistema funcione incluso sin la persona que lo armó.",
-        images: ["/3a.png", "/3b.png"],
+        images: ["/ejemplos/3a.png", "/ejemplos/3b.png"],
 
   },
   {
@@ -45,7 +45,7 @@ const trabajos: Trabajo[] = [
     subtitle: "Datos públicos · Análisis sectorial",
     body:
       "Transformé conjuntos de datos complejos en visualizaciones claras que permiten entender impactos y tendencias.",
-        images: ["/4a.png","/4b.png","/4c.png"],
+        images: ["/ejemplos/4a.png","/ejemplos/4b.png","/ejemplos/4c.png"],
 
   },
     {
@@ -53,7 +53,7 @@ const trabajos: Trabajo[] = [
     subtitle: "Proyecto comunitario · Datos abiertos",
     body:
       "Organicé datos abiertos y relevamientos para que cualquier persona pueda entenderlos y participar.",
-        images: ["/5a.png","/5b.png"],
+        images: ["/ejemplos/5a.png","/ejemplos/5b.png"],
 
   },
 ];
