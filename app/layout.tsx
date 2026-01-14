@@ -15,10 +15,14 @@ const newsreader = Newsreader({
 });
 
 export const metadata: Metadata = {
-  title: "Ordeno finanzas y administración",
+  title: "Enzo Thome | Landing Page",
   description:
     "Ayudo a emprendedores y PYMES a organizar su información, controlar su dinero y simplificar procesos con Excel, Google Sheets y automatizaciones simples.",
-};
+
+  icons: {
+    icon: "/favicon.ico",
+  },
+  };
 
 export default function RootLayout({
   children,

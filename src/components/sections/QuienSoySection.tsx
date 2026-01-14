@@ -126,7 +126,7 @@ export default function QuienSoySection() {
                 <div className="flex flex-col gap-2">
                   <div className="relative mx-auto w-full max-w-[300px] md:max-w-[360px] aspect-[4/5] overflow-hidden rounded-[22px] border border-white/10 bg-white/[0.02]">
                     <Image
-                      src="/europa.jpg"
+                      src="/europa1.jpg"
                       alt="Europa"
                       fill
                       quality={90}
