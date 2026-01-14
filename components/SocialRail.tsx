@@ -42,10 +42,11 @@ export default function SocialRail() {
     },
   ];
 
+  
   return (
     <nav
       aria-label="Redes"
-className="fixed left-6 top-1/2 z-40 hidden -translate-y-1/2 lg:block"
+className="fixed left-4 top-1/2 z-40 -translate-y-1/2 block"
     >
       <div className="flex flex-col items-center gap-3">
         {links.map((l) => (

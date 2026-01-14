@@ -46,8 +46,8 @@ w-[min(500px,200vw)]
       <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(11,15,23,0.80)_0%,rgba(11,15,23,0.78)_35%,rgba(11,15,23,0.35)_70%,rgba(11,15,23,0.15)_100%)]" />
 
       {/* Contenido */}
-      <div className="relative z-10 mx-auto flex min-h-screen max-w-5xl items-center px-6">
-        <div className="w-full text-center md:text-left">
+<div className="relative z-10 mx-auto flex min-h-screen max-w-5xl items-center px-6 pb-0 md:pb-0">
+<div className="w-full text-center md:text-left translate-y-30 sm:translate-y-20 md:translate-y-0">
          
           <p className="mb-4 inline-flex items-center gap-3 text-xs font-medium uppercase tracking-[0.28em] text-emerald-200/80">
       <span className="h-[1px] w-10 bg-emerald-300/60" />
