@@ -15,7 +15,7 @@ const newsreader = Newsreader({
 });
 
 export const metadata: Metadata = {
-  title: "Enzo Thome | Landing Page",
+  title: "Enzo Thome | Data & Automation",
   description:
     "Ayudo a emprendedores y PYMES a organizar su información, controlar su dinero y simplificar procesos con Excel, Google Sheets y automatizaciones simples.",
   };
