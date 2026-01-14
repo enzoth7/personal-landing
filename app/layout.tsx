@@ -18,10 +18,6 @@ export const metadata: Metadata = {
   title: "Enzo Thome | Landing Page",
   description:
     "Ayudo a emprendedores y PYMES a organizar su información, controlar su dinero y simplificar procesos con Excel, Google Sheets y automatizaciones simples.",
-
-  icons: {
-    icon: "/favicon.ico",
-  },
   };
 
 export default function RootLayout({
