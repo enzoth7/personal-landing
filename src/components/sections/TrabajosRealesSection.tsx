@@ -92,6 +92,7 @@ function TabButton({
 export default function TrabajosRealesSection() {
   const [activeIndex, setActiveIndex] = useState(0);
 const [activeImageIndex, setActiveImageIndex] = useState(0);
+const [isOpen, setIsOpen] = useState(false);
 
 const active = useMemo(() => trabajos[activeIndex], [activeIndex]);
 
@@ -175,7 +176,12 @@ useEffect(() => {
           "transition-shadow",
         ].join(" ")}
       >
-        <div className="relative aspect-[16/9] w-full">
+       <button
+  type="button"
+  onClick={() => setIsOpen(true)}
+  className="relative aspect-[16/9] w-full cursor-zoom-in"
+>
+
   <Image
   src={active.images[activeImageIndex]}
   alt={active.title}
@@ -185,7 +191,7 @@ useEffect(() => {
   quality={92}
 />
           <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-slate-950/20 to-transparent" />
-        </div>
+        </button>
 
 {active.images.length > 1 && (
   <div className="mt-3 flex gap-2 overflow-x-auto pb-1">
@@ -236,20 +242,7 @@ useEffect(() => {
 </Reveal>
 
 
-        {/* Tabs */}
-        <div className="flex flex-col gap-3">
-          {/* Mobile: scroll */}
-          <div className="flex gap-4 overflow-x-auto pb-1 lg:hidden">
-            {trabajos.map((t, i) => (
-              <TabButton
-                key={t.title}
-                title={t.title}
-                active={activeIndex === i}
-                onClick={() => setActiveIndex(i)}
-              />
-            ))}
-          </div>
-        </div>
+
       </div>
 
       <style jsx>{`
@@ -281,6 +274,23 @@ useEffect(() => {
           }
         }
       `}</style>
+{isOpen && (
+  <div
+    className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 p-4"
+    onClick={() => setIsOpen(false)}
+  >
+    <img
+      src={active.images[activeImageIndex]}
+      alt={active.title}
+      className="max-h-[90vh] max-w-[90vw] object-contain"
+    />
+  </div>
+)}
+
+
+
+
+
     </section>
   );
 }

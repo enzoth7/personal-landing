@@ -35,9 +35,32 @@ export default function SocialRail() {
 
   
   return (
+   <>
+<nav aria-label="Redes" className="fixed inset-x-0 bottom-0 z-50 lg:hidden">
+  <div className="mx-auto flex max-w-5xl items-center justify-center gap-5 border-t border-white/10 bg-black/50 px-6 py-1 backdrop-blur">
+    {links.map((l) => (
+      <a
+        key={`m-${l.label}`}
+        href={l.href}
+        target="_blank"
+        rel="noreferrer"
+        className="group rounded-full p-2 text-slate-300/70 transition hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-white/20"
+        aria-label={l.label}
+        title={l.label}
+      >
+        <span className="block opacity-80 transition group-hover:opacity-100">
+          {l.icon}
+        </span>
+      </a>
+    ))}
+  </div>
+</nav>
+
+   
+   
     <nav
       aria-label="Redes"
-className="fixed left-4 top-1/2 z-40 -translate-y-1/2 block"
+className="fixed left-6 top-1/2 z-40 hidden -translate-y-1/2 lg:block"
     >
       <div className="flex flex-col items-center gap-3">
         {links.map((l) => (
@@ -58,5 +81,6 @@ className="fixed left-4 top-1/2 z-40 -translate-y-1/2 block"
         <div className="mt-2 h-10 w-px bg-white/10" />
       </div>
     </nav>
+    </>
   );
 }

@@ -79,7 +79,7 @@ export default function QuienSoySection() {
 </h2>
 
           <p className="max-w-2xl text-lg leading-relaxed text-slate-300">
-                Entre 2018 y 2021 trabajé en como administrativo y auxiliar contable, tanto en el sector
+                Al inicio de mi carrera trabajé como administrativo y auxiliar contable, tanto en el sector
                 público como privado en Uruguay.
               </p>
           <p className="max-w-2xl text-lg leading-relaxed text-slate-300">

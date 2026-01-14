@@ -48,7 +48,7 @@ export default function ContactoSection() {
   return (
     <section
       id="contacto"
-      className="border-t border-slate-800/80 py-20 sm:py-24"
+      className="border-t border-slate-800/80 py-20 sm:py-24 pb-24 lg:pb-0"
     >
       <Reveal className="flex max-w-3xl flex-col gap-6">
 <div className="flex items-center gap-3">
