@@ -48,6 +48,22 @@ const trabajos: Trabajo[] = [
         images: ["/ejemplos/4a.png","/ejemplos/4b.png","/ejemplos/4c.png"],
 
   },
+      {
+    title: "Ordenamiento de documentación",
+    subtitle: "Trámite complejo · Gestión administrativa",
+    body:
+      "Busqué y encontré documentación dispersa, validé la información y armé un orden lógico para presentar un trámite de ciudadanía sin faltantes.",
+        images: ["/ejemplos/6a.png","/ejemplos/6b.png","/ejemplos/6c.png"],
+
+  },
+        {
+    title: "Planificación para proyecto personal",
+    subtitle: "Uso personal · Control y planificación",
+    body:
+      "Estructuré un presupuesto con múltiples variables (ingresos, gastos fijos y variables, plazos) y un cronograma realista para tomar decisiones sin improvisar durante el viaje.",
+        images: ["/ejemplos/7a.png"],
+
+  },
     {
     title: "Información pública ordenada y usable",
     subtitle: "Proyecto comunitario · Datos abiertos",

@@ -29,8 +29,9 @@ export default function Home() {
         <main className="mx-auto max-w-6xl px-6 pb-28 sm:px-10">
           <MetricasSection />
           <QueHagoSection />
-          <QuienSoySection />
+          
           <TrabajosRealesSection />
+          <QuienSoySection />
           <ToolsMarquee />
           <ContactoSection />
         </main>
