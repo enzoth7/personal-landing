@@ -30,6 +30,7 @@ export default function RootLayout({
     <html lang="es">
       <body className={`${plexSans.variable} ${newsreader.variable} antialiased`}>
         {children}
+        <Analytics />
       </body>
     </html>
   );
