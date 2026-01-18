@@ -14,6 +14,7 @@ const tools: Tool[] = [
   { name: "PDF Editor", src: "/logos/pdf.png", invert: true },
   { name: "PowerBI", src: "/logos/powerbi.png", invert: true },
   { name: "Tableau", src: "/logos/tableau.png", invert: true },
+  { name: "n8n", src: "/logos/n8n.png", invert: true },
   { name: "Notion", src: "/logos/notion2.png", invert: true },
   { name: "VS Code", src: "/logos/vscode.png", invert: true },
   { name: "SQL", src: "/logos/sql1.png", invert: true },
