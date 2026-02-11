@@ -1,50 +1,52 @@
+"use client";
+
 import Reveal from "@/components/Reveal";
+import { useLanguage } from "@/src/context/LanguageContext";
 import Image from "next/image";
 
 export default function QuienSoySection() {
+  const { t } = useLanguage();
   return (
     <section id="quien-soy" className="border-t border-slate-800/80 py-14 sm:py-16">
       <div className="flex flex-col gap-12 lg:gap-14">
         <div className="relative">
           <div
             aria-hidden="true"
-  className="pointer-events-none absolute inset-0 rounded-[32px] bg-gradient-to-r from-white/[0.02] via-transparent to-white/[0.02] opacity-60"
+            className="pointer-events-none absolute inset-0 rounded-[32px] bg-gradient-to-r from-white/[0.02] via-transparent to-white/[0.02] opacity-60"
           />
           <div className="relative grid gap-8 md:grid-cols-[minmax(0,1fr)_minmax(0,420px)] md:items-center">
             <Reveal className="flex flex-col gap-5">
-<div className="flex items-center gap-3">
-              <span className="h-px w-10 bg-emerald-300/40" />
-              <span className="text-sm uppercase tracking-[0.2em] text-emerald-200/80">
-                Quién soy
-              </span>
-</div>
-            <h2 className="font-display text-4xl font-semibold tracking-tight text-slate-50 sm:text-5xl">
-                Creo que cuando tenés un orden en tu trabajo, tenes claridad para decidir.
+              <div className="flex items-center gap-3">
+                <span className="h-px w-10 bg-emerald-300/40" />
+                <span className="text-sm uppercase tracking-[0.2em] text-emerald-200/80">
+                  {t.whoAmI.subtitle}
+                </span>
+              </div>
+              <h2 className="font-display text-4xl font-semibold tracking-tight text-slate-50 sm:text-5xl">
+                {t.whoAmI.title1}
               </h2>
-          <p className="max-w-2xl text-lg leading-relaxed text-slate-300">
-                Vengo de la administración real. De trabajar con números que tenían
-                consecuencias, no con dashboards de muestra.
+              <p className="max-w-2xl text-lg leading-relaxed text-slate-300">
+                {t.whoAmI.desc1}
               </p>
-          <p className="max-w-2xl text-lg leading-relaxed text-slate-300">
-                Por eso hoy priorizo sistemas simples, claros y que se sostengan en
-                el tiempo.
+              <p className="max-w-2xl text-lg leading-relaxed text-slate-300">
+                {t.whoAmI.desc2}
               </p>
             </Reveal>
-<Reveal className="relative">
-                <div className="relative mx-auto w-full max-w-[300px] md:max-w-[360px] aspect-[4/5] overflow-hidden rounded-[24px] border border-white/10 bg-white/[0.02]">
-  <Image
-    src="/presente.jpg"
-    alt="Presente"
-    fill
-    quality={100}
-    className="object-cover opacity-90"
-    sizes="(min-width: 1024px) 950px, 80vw"
-    priority
-  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-slate-950/20 to-transparent" />
-</div>
+            <Reveal className="relative">
+              <div className="relative mx-auto w-full max-w-[300px] md:max-w-[360px] aspect-[4/5] overflow-hidden rounded-[24px] border border-white/10 bg-white/[0.02]">
+                <Image
+                  src="/presente.jpg"
+                  alt="Presente"
+                  fill
+                  quality={100}
+                  className="object-cover opacity-90"
+                  sizes="(min-width: 1024px) 950px, 80vw"
+                  priority
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-slate-950/20 to-transparent" />
+              </div>
 
-</Reveal>
+            </Reveal>
 
           </div>
         </div>
@@ -52,11 +54,11 @@ export default function QuienSoySection() {
         <div className="relative">
           <div
             aria-hidden="true"
-  className="pointer-events-none absolute inset-0 rounded-[32px] bg-gradient-to-r from-white/[0.02] via-transparent to-white/[0.02] opacity-60"
+            className="pointer-events-none absolute inset-0 rounded-[32px] bg-gradient-to-r from-white/[0.02] via-transparent to-white/[0.02] opacity-60"
           />
           <div className="relative grid gap-8 md:grid-cols-[minmax(0,420px)_minmax(0,1fr)] md:items-center">
             <Reveal className="order-2 lg:order-1">
-<div className="grid gap-4">
+              <div className="grid gap-4">
                 <div className="relative mx-auto w-full max-w-[300px] md:max-w-[360px] aspect-[4/5] overflow-hidden rounded-[24px] border border-white/10 bg-white/[0.02]">
                   <Image
                     src="/admin2.png"
@@ -72,22 +74,20 @@ export default function QuienSoySection() {
             </Reveal>
             <Reveal className="order-1 flex flex-col gap-4 lg:order-2">
               <p className="text-sm uppercase tracking-[0.22em] text-slate-400">
-                2018–2021
+                {t.whoAmI.subtitle2}
               </p>
-            <h2 className="font-display text-4xl font-semibold tracking-tight text-slate-50 sm:text-5xl">
-  Administración y responsabilidad
-</h2>
+              <h2 className="font-display text-4xl font-semibold tracking-tight text-slate-50 sm:text-5xl">
+                {t.whoAmI.title2}
+              </h2>
 
-          <p className="max-w-2xl text-lg leading-relaxed text-slate-300">
-                Al inicio de mi carrera trabajé como administrativo y auxiliar contable, tanto en el sector
-                público como privado en Uruguay.
+              <p className="max-w-2xl text-lg leading-relaxed text-slate-300">
+                {t.whoAmI.desc3}
               </p>
-          <p className="max-w-2xl text-lg leading-relaxed text-slate-300">
-                Ahí entendí algo clave: cuando la información está desordenada,
-                todo se vuelve más pesado.
+              <p className="max-w-2xl text-lg leading-relaxed text-slate-300">
+                {t.whoAmI.desc4}
               </p>
-          <p className="max-w-2xl text-lg leading-relaxed text-slate-300">
-                Los errores cuestan tiempo, plata y energía.
+              <p className="max-w-2xl text-lg leading-relaxed text-slate-300">
+                {t.whoAmI.desc5}
               </p>
             </Reveal>
           </div>
@@ -96,33 +96,31 @@ export default function QuienSoySection() {
         <div className="relative">
           <div
             aria-hidden="true"
-  className="pointer-events-none absolute inset-0 rounded-[32px] bg-gradient-to-r from-white/[0.02] via-transparent to-white/[0.02] opacity-60"
+            className="pointer-events-none absolute inset-0 rounded-[32px] bg-gradient-to-r from-white/[0.02] via-transparent to-white/[0.02] opacity-60"
           />
           <div className="relative grid gap-8 md:grid-cols-[minmax(0,1fr)_minmax(0,420px)] md:items-center">
             <Reveal className="flex flex-col gap-4">
               <p className="text-sm uppercase tracking-[0.22em] text-slate-400">
-                2021–2024
+                {t.whoAmI.subtitle3}
               </p>
-            <h2 className="font-display text-4xl font-semibold tracking-tight text-slate-50 sm:text-5xl">
-  Adaptación y flexibilidad
-</h2>
-          <p className="max-w-2xl text-lg leading-relaxed text-slate-300">
-                En 2021 decidí dar un salto.
+              <h2 className="font-display text-4xl font-semibold tracking-tight text-slate-50 sm:text-5xl">
+                {t.whoAmI.title3}
+              </h2>
+              <p className="max-w-2xl text-lg leading-relaxed text-slate-300">
+                {t.whoAmI.desc6}
               </p>
-          <p className="max-w-2xl text-lg leading-relaxed text-slate-300">
-                Me fui a estudiar idiomas a Europa, vivir en otra cultura y abrirme a otra forma de vida.
+              <p className="max-w-2xl text-lg leading-relaxed text-slate-300">
+                {t.whoAmI.desc7}
               </p>
-          <p className="max-w-2xl text-lg leading-relaxed text-slate-300">
-                No solo para conocer, sino para aprender a adaptarme, convivir con otros
-                sistemas y crecer en habilidades.
+              <p className="max-w-2xl text-lg leading-relaxed text-slate-300">
+                {t.whoAmI.desc8}
               </p>
-          <p className="max-w-2xl text-lg leading-relaxed text-slate-300">
-                Esa experiencia me dio algo más valioso que cualquier herramienta: criterio.
-                Saber cuándo algo suma y cuándo es mejor descartarlo.
+              <p className="max-w-2xl text-lg leading-relaxed text-slate-300">
+                {t.whoAmI.desc9}
               </p>
             </Reveal>
             <Reveal className="relative">
-<div className="grid gap-4">
+              <div className="grid gap-4">
                 <div className="flex flex-col gap-2">
                   <div className="relative mx-auto w-full max-w-[300px] md:max-w-[360px] aspect-[4/5] overflow-hidden rounded-[22px] border border-white/10 bg-white/[0.02]">
                     <Image
@@ -145,7 +143,7 @@ export default function QuienSoySection() {
         <div className="relative">
           <div
             aria-hidden="true"
-  className="pointer-events-none absolute inset-0 rounded-[32px] bg-gradient-to-r from-white/[0.02] via-transparent to-white/[0.02] opacity-60"
+            className="pointer-events-none absolute inset-0 rounded-[32px] bg-gradient-to-r from-white/[0.02] via-transparent to-white/[0.02] opacity-60"
           />
           <div className="relative grid gap-8 md:grid-cols-[minmax(0,420px)_minmax(0,1fr)] md:items-center">
             <Reveal className="order-2 lg:order-1">
@@ -163,21 +161,19 @@ export default function QuienSoySection() {
             </Reveal>
             <Reveal className="order-1 flex flex-col gap-4 lg:order-2">
               <p className="text-sm uppercase tracking-[0.22em] text-slate-400">
-                2025
+                {t.whoAmI.subtitle4}
               </p>
-            <h2 className="font-display text-4xl font-semibold tracking-tight text-slate-50 sm:text-5xl">
-  Ordenamiento y criterio
-</h2>
-          <p className="max-w-2xl text-lg leading-relaxed text-slate-300">
-                En 2025 decidí frenar, evaluar los ultimos años y reordenar mi camino. No fue
-                gratis, pero fue necesario.
+              <h2 className="font-display text-4xl font-semibold tracking-tight text-slate-50 sm:text-5xl">
+                {t.whoAmI.title4}
+              </h2>
+              <p className="max-w-2xl text-lg leading-relaxed text-slate-300">
+                {t.whoAmI.desc10}
               </p>
-          <p className="max-w-2xl text-lg leading-relaxed text-slate-300">
-                Hoy cuento con experiencia administrativa, formación técnica continua
-                y una visión de como funciona el mundo real, no solo en papeles.
+              <p className="max-w-2xl text-lg leading-relaxed text-slate-300">
+                {t.whoAmI.desc11}
               </p>
-          <p className="max-w-2xl text-lg leading-relaxed text-slate-300">
-                Trabajo con personas y equipos que necesitan claridad para tomar decisiones.
+              <p className="max-w-2xl text-lg leading-relaxed text-slate-300">
+                {t.whoAmI.desc12}
               </p>
             </Reveal>
           </div>

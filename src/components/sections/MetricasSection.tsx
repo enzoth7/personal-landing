@@ -1,20 +1,26 @@
-import Reveal from "@/components/Reveal";
+"use client";
 
-const metrics = [
-  {
-    value: "+7",
-    label: "Años de experiencia",
-  },
-  {
-    value: "+20",
-    label: "Trabajos realizados como Freelance",
-  },
-  {
-    value: "+3 ",
-    label: "Idiomas dominados",
-  },
-];
+import Reveal from "@/components/Reveal";
+import { useLanguage } from "@/src/context/LanguageContext";
+
 export default function MetricasSection() {
+  const { t } = useLanguage();
+
+  const metrics = [
+    {
+      value: "+7",
+      label: t.metrics.years,
+    },
+    {
+      value: "+20",
+      label: t.metrics.jobs,
+    },
+    {
+      value: "+3 ",
+      label: t.metrics.languages,
+    },
+  ];
+
   return (
     <section aria-label="Señales de realidad" className="py-12 sm:py-14">
       <Reveal>
