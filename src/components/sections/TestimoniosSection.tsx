@@ -160,14 +160,8 @@ export default function TestimoniosSection() {
     const update = () => setPrefersReducedMotion(media.matches);
 
     update();
-
-    if ("addEventListener" in media) {
-      media.addEventListener("change", update);
-      return () => media.removeEventListener("change", update);
-    }
-
-    media.addListener(update);
-    return () => media.removeListener(update);
+    media.addEventListener("change", update);
+    return () => media.removeEventListener("change", update);
   }, []);
 
   // Inicialización del scroll al medio
@@ -256,14 +250,14 @@ export default function TestimoniosSection() {
 
       const scrollLeft = container.scrollLeft;
       const itemWidthWithGap = items[1].offsetLeft - items[0].offsetLeft;
-      
+
       const setWidth = TOTAL * itemWidthWithGap;
 
       // Reset de scroll para bucle infinito si nos salimos del bloque central
       if (scrollLeft < setWidth - container.clientWidth) {
-          container.scrollLeft += setWidth;
+        container.scrollLeft += setWidth;
       } else if (scrollLeft > setWidth * 2) {
-          container.scrollLeft -= setWidth;
+        container.scrollLeft -= setWidth;
       }
 
       // Actualizar índice visual basado en scroll
@@ -407,12 +401,12 @@ export default function TestimoniosSection() {
                 <p className="text-sm font-light leading-relaxed text-slate-300 sm:text-base">
                   "{testimonial.text}"
                 </p>
-                
+
                 <div className="mt-auto flex items-center justify-between pt-2">
-                   <span className="text-[10px] font-medium uppercase tracking-wider text-slate-500">Fiverr.com</span>
-                   <span className="text-xs italic text-slate-400">
-                     {testimonial.month}
-                   </span>
+                  <span className="text-[10px] font-medium uppercase tracking-wider text-slate-500">Fiverr.com</span>
+                  <span className="text-xs italic text-slate-400">
+                    {testimonial.month}
+                  </span>
                 </div>
               </a>
             ))}
