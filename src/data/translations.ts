@@ -91,6 +91,11 @@ export const translations = {
                 },
             ],
         },
+        testimonials: {
+            subtitle: "Testimonios",
+            title: "Opiniones de clientes",
+            description: "Resultados concretos, comunicación clara y un proceso que se sostiene en el tiempo.",
+        },
         contact: {
             subtitle: "Contacto",
             description: "Si sentís que necesitás ordenar tu situación, escribime directo.",
@@ -192,6 +197,11 @@ export const translations = {
                     body: "I organized open data and surveys so that anyone can understand them and participate.",
                 },
             ],
+        },
+        testimonials: {
+            subtitle: "Testimonials",
+            title: "Client reviews",
+            description: "Clear communication, concrete results, and a process that holds up over time.",
         },
         contact: {
             subtitle: "Contact",

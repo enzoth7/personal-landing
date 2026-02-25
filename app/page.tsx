@@ -8,6 +8,7 @@ import QueHagoSection from "@/src/components/sections/QueHagoSection";
 import QuienSoySection from "@/src/components/sections/QuienSoySection";
 import ToolsMarquee from "@/src/components/sections/ToolsMarquee";
 import TrabajosRealesSection from "@/src/components/sections/TrabajosRealesSection";
+import TestimoniosSection from "@/src/components/sections/TestimoniosSection";
 import SocialRail from "@/components/SocialRail";
 import BackgroundDiagonals from "@/components/BackgroundDiagonals";
 
@@ -32,6 +33,7 @@ export default function Home() {
           <HeroSection />
           <main className="mx-auto max-w-6xl px-6 pb-28 sm:px-10">
             <MetricasSection />
+            <TestimoniosSection />
             <QueHagoSection />
 
             <TrabajosRealesSection />
