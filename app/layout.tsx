@@ -16,10 +16,28 @@ const newsreader = Newsreader({
 });
 
 export const metadata: Metadata = {
-  title: "Enzo Thome | Data & Automation",
+  title: "Enzo Thome | Arquitecto de Datos y Automatización",
   description:
-    "Ayudo a emprendedores y PYMES a organizar su información, controlar su dinero y simplificar procesos con Excel, Google Sheets y automatizaciones simples.",
-  };
+    "Estratega en automatización de procesos y optimización de datos. Transformo el caos operativo en sistemas eficientes para PYMES y emprendedores que buscan escalar sin fricciones.",
+  keywords: ["automatización de procesos", "n8n", "sistemas de datos", "optimización de PYMES", "arquitecto de software", "Uruguay", "España"],
+  openGraph: {
+    title: "Enzo Thome | Sistemas y Automatización de Alto Impacto",
+    description: "Multiplicando la eficiencia de tu negocio a través de sistemas inteligentes y deterministas.",
+    url: "https://enzothome.com", // Cambiar por tu dominio final
+    siteName: "Enzo Thome",
+    locale: "es_UY",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Enzo Thome | Arquitecto de Sistemas",
+    description: "Sistemas escalables para emprendedores y empresas.",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  }
+};
 
 export default function RootLayout({
   children,
