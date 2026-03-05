@@ -26,6 +26,15 @@ const testimonials = [
     link: "https://es.fiverr.com/enzoth98?public_mode=true",
     avatar: "/Fiverr.png",
   },
+    {
+    name: "daphaneghw",
+    country: "US",
+    stars: 5,
+    month: "Enero 2026",
+    text: "Amazing job and exceeded expectations!",
+    link: "https://es.fiverr.com/enzoth98?public_mode=true",
+    avatar: "/Fiverr.png",
+  },
   {
     name: "tomwdallas",
     country: "US",
@@ -46,20 +55,21 @@ const testimonials = [
     avatar: "/Fiverr.png",
   },
   {
-    name: "daphaneghw",
-    country: "US",
-    stars: 5,
-    month: "Enero 2026",
-    text: "Amazing job and exceeded expectations!",
-    link: "https://es.fiverr.com/enzoth98?public_mode=true",
-    avatar: "/Fiverr.png",
-  },
-  {
     name: "dmoskat",
     country: "US",
     stars: 5,
     month: "Febrero 2026",
     text: "Accomplished everything I needed at a fair price. Thank you!",
+    link: "https://es.fiverr.com/enzoth98?public_mode=true",
+    avatar: "/Fiverr.png",
+  },
+  {
+    name: "anitabarry303",
+    country: "AU",
+    stars: 5,
+    month: "Marzo 2026",
+    text:
+      "Enzo understood what I requested very well and delivered exactly what I needed. He provided efficient and clear communication & I'm so happy with the final result. I highly recommend Enzo and will return in the future. Thanks Enzo!!",
     link: "https://es.fiverr.com/enzoth98?public_mode=true",
     avatar: "/Fiverr.png",
   },
@@ -71,7 +81,8 @@ const LOOPED_TESTIMONIALS = [...testimonials, ...testimonials, ...testimonials];
 const MIDDLE_START = TOTAL;
 
 const FlagIcon = ({ country }: { country: string }) => {
-  switch (country) {
+  const normalized = country.trim().toUpperCase();
+  switch (normalized) {
     case "ES":
       return (
         <svg viewBox="0 0 640 480" className="h-full w-full object-cover">
@@ -119,6 +130,50 @@ const FlagIcon = ({ country }: { country: string }) => {
           <rect width="240" height="266.666" fill="#fff" />
           <circle cx="120" cy="133.333" r="44" fill="#f7c948" />
           <circle cx="120" cy="133.333" r="30" fill="#f6b73c" />
+        </svg>
+      );
+    case "AU":
+    case "AUS":
+      return (
+        <svg viewBox="0 0 640 480" className="h-full w-full object-cover">
+          <rect width="640" height="480" fill="#012169" />
+          <g>
+            <rect width="320" height="240" fill="#012169" />
+            <path fill="#fff" d="M0 0h40l280 200v40h-40L0 40z" />
+            <path fill="#fff" d="M320 0h-40L0 200v40h40l280-200z" />
+            <path fill="#c8102e" d="M0 0h20l300 220v20h-20L0 20z" />
+            <path fill="#c8102e" d="M320 0h-20L0 220v20h20L320 20z" />
+            <rect x="130" width="60" height="240" fill="#fff" />
+            <rect y="90" width="320" height="60" fill="#fff" />
+            <rect x="145" width="30" height="240" fill="#c8102e" />
+            <rect y="105" width="320" height="30" fill="#c8102e" />
+          </g>
+          <g fill="#fff">
+            <path
+              d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+              transform="translate(130 255) scale(3)"
+            />
+            <path
+              d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+              transform="translate(455 95) scale(1.4)"
+            />
+            <path
+              d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+              transform="translate(415 190) scale(1.4)"
+            />
+            <path
+              d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+              transform="translate(545 200) scale(1.4)"
+            />
+            <path
+              d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+              transform="translate(500 245) scale(1.1)"
+            />
+            <path
+              d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+              transform="translate(485 330) scale(1.6)"
+            />
+          </g>
         </svg>
       );
     default:
