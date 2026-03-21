@@ -13,9 +13,6 @@ export default function TrabajosRealesSection() {
     ["/ejemplos/2aa.png", "/ejemplos/2bb.png", "/ejemplos/2cost.png"],
     ["/ejemplos/3a.png", "/ejemplos/3b.png"],
     ["/ejemplos/4a.png", "/ejemplos/4b.png", "/ejemplos/4c.png"],
-    ["/ejemplos/6a.png", "/ejemplos/6b.png", "/ejemplos/6c.png"],
-    ["/ejemplos/7a.png"],
-    ["/ejemplos/5a.png", "/ejemplos/5b.png"],
   ];
 
   const trabajos = t.work.items.map((item: any, index: number) => ({
