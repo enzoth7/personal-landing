@@ -16,7 +16,7 @@ function PlayIcon() {
 }
 
 export default function HeroSection() {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   const [isPlaying, setIsPlaying] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
 
@@ -60,7 +60,7 @@ export default function HeroSection() {
             <div className="relative aspect-video overflow-hidden rounded-2xl border border-white/20 bg-[linear-gradient(135deg,#05070b_0%,#09111f_45%,#111827_100%)] shadow-[0_35px_120px_rgba(0,0,0,0.72)] ring-1 ring-white/10">
               <video
                 ref={videoRef}
-                src="/VideoES.mp4"
+                src={language === "en" ? "/VideoEN.mp4#t=0.001" : "/VideoES.mp4#t=0.001"}
                 className="h-full w-full object-contain rounded-2xl"
                 controls
                 playsInline
