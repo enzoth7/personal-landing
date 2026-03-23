@@ -9,10 +9,10 @@ export default function TrabajosRealesSection() {
   const { t } = useLanguage();
 
   const images = [
-    ["/ejemplos/1aa.png", "/ejemplos/1bb.png", "/ejemplos/1cc.png"],
-    ["/ejemplos/2aa.png", "/ejemplos/2bb.png", "/ejemplos/2cost.png"],
-    ["/ejemplos/3a.png", "/ejemplos/3b.png"],
+    ["/ejemplos/5a.png", "/ejemplos/5b.png", "/ejemplos/5c.png", "/ejemplos/5d.png"],
     ["/ejemplos/4a.png", "/ejemplos/4b.png", "/ejemplos/4c.png"],
+    ["/ejemplos/2aa.png", "/ejemplos/2bb.png", "/ejemplos/2cost.png"],
+    ["/ejemplos/1aa.png", "/ejemplos/1bb.png", "/ejemplos/1cc.png"],
   ];
 
   const trabajos = t.work.items.map((item: any, index: number) => ({
