@@ -73,6 +73,8 @@ function AboutContent() {
                     fill
                     quality={100}
                     priority
+                    placeholder="blur"
+                    blurDataURL="data:image/webp;base64,UklGRkIAAABXRUJQVlA4IDYAAADwAQCdASoKAAoAAUAmJZwAAt0M1h/eIAAA/vXrzYdRx5t0cByMfcUDWOh00p5zO0QVWuyAAAA="
                     className="object-cover object-center"
                     sizes="(min-width: 1024px) 1200px, 100vw"
                   />

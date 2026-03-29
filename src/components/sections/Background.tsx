@@ -16,6 +16,8 @@ export default function Background({ variant = "default" }: BackgroundProps) {
             alt=""
             fill
             priority
+            placeholder="blur"
+            blurDataURL="data:image/webp;base64,UklGRk4AAABXRUJQVlA4IEIAAAAQAgCdASoKAAYAAUAmJbACdLoAArl9lNJgAP7xuhf859s6HyD82Pg+Bv7e9eiWk/b4Z5EnavD3/6Gh9+MwUcn2NAA="
             sizes="100vw"
             className="object-cover object-center"
           />
