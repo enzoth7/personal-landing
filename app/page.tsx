@@ -35,7 +35,7 @@ export default function Home() {
             <main className="relative z-30 mx-auto max-w-[1400px] overflow-hidden bg-[#FAF9F6] shadow-[0_0_50px_rgba(0,0,0,0.3)]">
               <div className="px-6 sm:px-10 lg:px-12">
                 <MetricasSection />
-                <VideoSection />
+                {/* <VideoSection /> */}
                 <QueHagoSection />
                 <TestimoniosSection />
                 <ToolsMarquee />
