@@ -12,7 +12,7 @@ export default function Background({ variant = "default" }: BackgroundProps) {
       <div className="fixed inset-0 -z-10">
         <div className="absolute inset-0">
           <Image
-            src="/wallpaper.jpg"
+            src="/wallpaper.webp"
             alt=""
             fill
             priority

@@ -68,7 +68,7 @@ function AboutContent() {
               <div className="relative h-[600px] overflow-hidden border-t border-neutral-200 lg:h-auto lg:min-h-full lg:border-l lg:border-t-0">
                 <div className="absolute inset-0">
                   <Image
-                    src="/1_ext.jpg"
+                    src="/1_ext.webp"
                     alt="Enzo Thome"
                     fill
                     quality={100}
