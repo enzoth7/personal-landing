@@ -19,6 +19,7 @@ const SEO_DESCRIPTION =
   "Workflow Waves dise\u00f1a sistemas escalables de automatizaci\u00f3n, datos y operaciones para empresas que quieren crecer con control.";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://workflowwaves.vercel.app"),
   title: "Workflow Waves | Arquitectura de Datos y Automatizaci\u00f3n",
   description: SEO_DESCRIPTION,
   keywords: [
@@ -46,8 +47,10 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Workflow Waves | Arquitectura de Datos y Automatizaci\u00f3n",
-    description: SEO_DESCRIPTION,
     images: ["/logo1.png"],
+  },
+  alternates: {
+    canonical: "/",
   },
   robots: {
     index: true,
