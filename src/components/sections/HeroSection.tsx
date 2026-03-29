@@ -1,113 +1,46 @@
 "use client";
 
-import { useRef, useState } from "react";
+import Link from "next/link";
 import { useLanguage } from "@/src/context/LanguageContext";
-
-function PlayIcon() {
-  return (
-    <svg
-      aria-hidden="true"
-      viewBox="0 0 24 24"
-      className="h-7 w-7 fill-white"
-    >
-      <path d="M8 6.5v11l9-5.5-9-5.5Z" />
-    </svg>
-  );
-}
+import SystemMap from "./SystemMap";
 
 export default function HeroSection() {
-  const { t, language } = useLanguage();
-  const [isPlaying, setIsPlaying] = useState(false);
-  const videoRef = useRef<HTMLVideoElement>(null);
-
-  const togglePlay = async () => {
-    const video = videoRef.current;
-    if (!video) {
-      return;
-    }
-
-    try {
-      await video.play();
-      setIsPlaying(true);
-    } catch {
-      setIsPlaying(false);
-    }
-  };
+  const { t } = useLanguage();
 
   return (
-    <section className="relative min-h-screen overflow-hidden">
-      <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(7,10,16,0.94)_0%,rgba(7,10,16,0.84)_28%,rgba(7,10,16,0.52)_58%,rgba(7,10,16,0.28)_100%)]" />
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(15,23,42,0)_0%,rgba(15,23,42,0.12)_45%,rgba(15,23,42,0.55)_100%)]" />
+    <section className="relative min-h-screen w-full overflow-hidden bg-transparent text-white">
+      {/* Background System Architecture Layer */}
+      <SystemMap />
 
-      <div className="relative z-10 mx-auto flex min-h-screen max-w-[84rem] items-center px-6 py-28 sm:px-10 sm:py-32">
-        <div className="w-full">
-          <div className="mx-auto max-w-4xl text-center">
-            <p className="mb-5 inline-flex items-center gap-3 text-[11px] font-medium uppercase tracking-[0.28em] text-emerald-100/80">
-              <span className="h-[1px] w-8 bg-emerald-300/60" />
-              {t.hero.subtitle}
-            </p>
-
-            <h1 className="font-display text-5xl font-semibold leading-[0.95] tracking-tight text-white sm:text-6xl lg:text-7xl">
-              {t.hero.title}
+      <div className="relative z-10 grid min-h-screen w-full grid-cols-1 gap-16 px-6 pt-25 pb-66 text-center sm:px-10 sm:pt-20 sm:pb-20 md:grid-cols-2 md:gap-0 md:px-12 md:py-0">
+        <div className="order-1 flex items-start justify-center md:order-2 md:items-center md:justify-end md:pr-28">
+          <div className="flex max-w-md flex-col items-center md:w-full md:max-w-[36rem] md:items-end md:text-right xl:max-w-[40rem]">
+            <h1 className="font-sans text-6xl font-black leading-[0.95] tracking-tighter text-white sm:text-6xl md:max-w-[min-content] md:text-7xl xl:text-[9.5rem]">
+              <span className="block text-right opacity-90">{t.hero.titleLine1}</span>
+              <span className="block opacity-80 md:ml-auto">{t.hero.titleLine2}</span>
+              <span className="block opacity-90">{t.hero.titleLine3}</span>
             </h1>
-
-            <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-slate-300 sm:text-lg">
+            <div className="mt-6 h-px w-20 bg-gradient-to-r from-transparent via-white/40 to-transparent md:mt-8 md:w-24 md:bg-gradient-to-l md:from-white/40 md:via-transparent md:to-transparent" />
+            <p className="mt-6 max-w-md text-sm font-light leading-relaxed tracking-wide text-white/60 sm:text-base md:mt-8 md:max-w-sm">
               {t.hero.description}
             </p>
           </div>
+        </div>
 
-          <div className="mx-auto mt-10 max-w-3xl">
-            <div className="relative aspect-video overflow-hidden rounded-2xl border border-white/20 bg-[linear-gradient(135deg,#05070b_0%,#09111f_45%,#111827_100%)] shadow-[0_35px_120px_rgba(0,0,0,0.72)] ring-1 ring-white/10">
-              <video
-                ref={videoRef}
-                src={language === "en" ? "/VideoEN.mp4#t=0.001" : "/VideoES.mp4#t=0.001"}
-                className="h-full w-full object-contain rounded-2xl"
-                controls
-                playsInline
-                preload="metadata"
-                autoPlay={false}
-                onPlay={() => setIsPlaying(true)}
-                onPause={() => setIsPlaying(false)}
-              />
-
-              {!isPlaying && (
-                <div
-                  role="button"
-                  tabIndex={0}
-                  aria-label="Play video"
-                  className="absolute inset-0 flex cursor-pointer items-center justify-center bg-black/20 backdrop-blur-[2px]"
-                  onClick={() => void togglePlay()}
-                  onKeyDown={(event) => {
-                    if (event.key === "Enter" || event.key === " ") {
-                      event.preventDefault();
-                      void togglePlay();
-                    }
-                  }}
-                >
-                  <div className="flex h-20 w-20 items-center justify-center rounded-full border border-white/20 bg-white/10 shadow-[0_20px_60px_rgba(0,0,0,0.25)]">
-                    <PlayIcon />
-                  </div>
-                </div>
-              )}
-            </div>
-          </div>
-
-          <div className="mt-8 flex flex-col items-center gap-3 sm:flex-row sm:justify-center md:justify-center">
-            <a
-              href="https://calendly.com/enzothome1/consulting"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="rounded-full bg-white px-6 py-3 text-sm font-medium text-black shadow-[0_18px_50px_rgba(255,255,255,0.16)] transition hover:bg-slate-100"
+        <div className="order-2 flex items-start justify-center md:order-1 md:items-center">
+          <div className="flex max-w-sm flex-col items-center text-center">
+            {/* Raiz del Mindmap a partir de este botón */}
+            <Link
+              href="/onboarding"
+              className="group relative rounded-[1.125rem] border border-white/10 bg-white/5 px-12 py-5 text-sm font-medium tracking-[0.2em] text-white backdrop-blur-xl transition-all duration-700 hover:bg-white/10 hover:border-white/20 hover:scale-[1.02] hover:shadow-[0_0_30px_rgba(255,255,255,0.05)]"
             >
               {t.hero.ctaPrimary}
-            </a>
-
-            <a
-              href="#contacto"
-              className="rounded-full border border-white/15 bg-black/10 px-6 py-3 text-sm font-medium text-white/90 backdrop-blur-sm transition hover:border-white/30 hover:bg-white/[0.08]"
-            >
-              {t.hero.ctaSecondary}
-            </a>
+              {/* Sutil resplandor interior */}
+              <div className="absolute inset-0 rounded-[1.125rem] bg-gradient-to-tr from-white/0 to-white/5 opacity-0 transition-opacity duration-700 group-hover:opacity-100" />
+            </Link>
+            <p className="mt-6 max-w-[18rem] text-center text-[10px] font-extralight uppercase tracking-[0.3em] text-white/30">
+              {t.hero.subtext}
+            </p>
           </div>
         </div>
       </div>

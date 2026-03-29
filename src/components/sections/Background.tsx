@@ -1,25 +1,66 @@
-const DEBUG_NO_GLOW = false;
+import Image from "next/image";
 
-export default function Background() {
+const DEBUG_NO_OVERLAY = false;
+
+type BackgroundProps = {
+  variant?: "default" | "wallpaper";
+};
+
+export default function Background({ variant = "default" }: BackgroundProps) {
+  if (variant === "wallpaper") {
+    return (
+      <div className="fixed inset-0 -z-10">
+        <div className="absolute inset-0">
+          <Image
+            src="/wallpaper.jpg"
+            alt=""
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover object-center"
+          />
+        </div>
+        <div className="absolute inset-0 bg-[#0f172a]/80" />
+        <div
+          className="absolute inset-0"
+          style={{
+            background:
+              "radial-gradient(circle at 72% 22%, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0) 18%), linear-gradient(180deg, rgba(15,23,42,0.1) 0%, rgba(15,23,42,0.22) 48%, rgba(15,23,42,0.46) 100%)",
+          }}
+        />
+      </div>
+    );
+  }
+
   return (
     <div className="fixed inset-0 -z-10">
-      {/* Base dark */}
-      <div className="absolute inset-0 bg-[#0e1117]" />
+      <div className="absolute inset-0 bg-[#f8fafc]" />
 
-      {!DEBUG_NO_GLOW && (
+      {!DEBUG_NO_OVERLAY && (
         <>
-          {/* Subtle center lift (no fog) */}
-          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(255,255,255,0.04)_0%,rgba(255,255,255,0.02)_30%,rgba(0,0,0,0)_70%)]" />
-          {/* Subtle side tint */}
-          <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(11,15,23,0.12)_0%,rgba(11,15,23,0.0)_45%,rgba(11,15,23,0.12)_100%)]" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_16%,rgba(15,23,42,0.09)_0%,rgba(248,250,252,0)_28%)]" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_82%_10%,rgba(15,23,42,0.05)_0%,rgba(248,250,252,0)_24%)]" />
+          <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(15,23,42,0.04)_0%,rgba(248,250,252,0.08)_32%,rgba(15,23,42,0.06)_100%)]" />
+          <div
+            className="absolute inset-0"
+            style={{
+              backgroundImage:
+                "linear-gradient(to right, rgba(23,23,23,0.025) 1px, transparent 1px), linear-gradient(to bottom, rgba(23,23,23,0.025) 1px, transparent 1px)",
+              backgroundSize: "40px 40px",
+            }}
+          />
+          <div
+            className="absolute inset-0"
+            style={{
+              backgroundImage:
+                "radial-gradient(circle at 1px 1px, rgba(6,78,59,0.03) 1px, transparent 0)",
+              backgroundSize: "40px 40px",
+            }}
+          />
         </>
       )}
 
-      {/* Vignette (darker edges) */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(0,0,0,0)_35%,rgba(0,0,0,0.45)_75%,rgba(0,0,0,0.6)_100%)]" />
-
-      {/* Subtle noise */}
-      <div className="absolute inset-0 opacity-[0.03] bg-[url('/noise.png')] mix-blend-overlay" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(23,23,23,0)_56%,rgba(23,23,23,0.04)_100%)]" />
     </div>
   );
 }

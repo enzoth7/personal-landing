@@ -1,9 +1,6 @@
 "use client";
 
-import { useLanguage } from "@/src/context/LanguageContext";
-
 export default function SocialRail() {
-  const { t } = useLanguage();
   const links = [
     {
       label: "GitHub",
@@ -23,69 +20,31 @@ export default function SocialRail() {
         </svg>
       ),
     },
-    {
-      label: t.social.site,
-      href: "https://miadmi.com",
-      icon: (
-        <img
-          src="/miadmi.png"
-          alt=""
-          className="h-6.5 w-5 opacity-80 transition group-hover:opacity-100"
-          style={{ filter: "grayscale(1) brightness(1.8) contrast(1.2)" }}
-        />
-
-      ),
-    },
   ];
 
-
   return (
-    <>
-      <nav aria-label="Redes" className="fixed inset-x-0 bottom-0 z-50 lg:hidden">
-        <div className="mx-auto flex max-w-5xl items-center justify-center gap-5 border-t border-white/10 bg-black/50 px-6 py-1 backdrop-blur">
-          {links.map((l) => (
-            <a
-              key={`m-${l.label}`}
-              href={l.href}
-              target="_blank"
-              rel="noreferrer"
-              className="group rounded-full p-2 text-slate-300/70 transition hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-white/20"
-              aria-label={l.label}
-              title={l.label}
-            >
-              <span className="block opacity-80 transition group-hover:opacity-100">
-                {l.icon}
-              </span>
-            </a>
-          ))}
-        </div>
-      </nav>
-
-
-
-      <nav
-        aria-label="Redes"
-        className="fixed left-6 top-1/2 z-40 hidden -translate-y-1/2 lg:block"
-      >
-        <div className="flex flex-col items-center gap-3">
-          {links.map((l) => (
-            <a
-              key={l.label}
-              href={l.href}
-              target="_blank"
-              rel="noreferrer"
-              className="group rounded-full p-2 text-slate-300/70 transition hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-white/20"
-              aria-label={l.label}
-              title={l.label}
-            >
-              <span className="block opacity-80 transition group-hover:opacity-100">
-                {l.icon}
-              </span>
-            </a>
-          ))}
-          <div className="mt-2 h-10 w-px bg-white/10" />
-        </div>
-      </nav>
-    </>
+    <nav
+      aria-label="Redes"
+      className="fixed right-6 top-1/2 z-40 hidden -translate-y-1/2 lg:block"
+    >
+      <div className="flex flex-col items-center gap-3">
+        {links.map((l) => (
+          <a
+            key={l.label}
+            href={l.href}
+            target="_blank"
+            rel="noreferrer"
+            className="group rounded-full border border-neutral-200 bg-slate-50/90 p-2 text-slate-500 shadow-sm transition hover:border-neutral-300 hover:text-neutral-950 focus:outline-none focus-visible:ring-2 focus-visible:ring-neutral-300"
+            aria-label={l.label}
+            title={l.label}
+          >
+            <span className="block opacity-80 transition group-hover:opacity-100">
+              {l.icon}
+            </span>
+          </a>
+        ))}
+        <div className="mt-2 h-10 w-px bg-neutral-300" />
+      </div>
+    </nav>
   );
 }

@@ -1,8 +1,7 @@
-﻿"use client";
+"use client";
 
 import { useCallback, useEffect, useRef, useState } from "react";
 import Image from "next/image";
-import Reveal from "@/components/Reveal";
 import { useLanguage } from "@/src/context/LanguageContext";
 
 const testimonials = [
@@ -196,6 +195,17 @@ const StarIcon = ({ className = "" }: { className?: string }) => (
   </svg>
 );
 
+function SectionEyebrow({ label }: { label: string }) {
+  return (
+    <div className="flex items-center gap-4">
+      <span className="h-px w-10 bg-[#064e3b]/28" />
+      <span className="text-sm font-semibold uppercase tracking-[0.3em] text-slate-500">
+        {label}
+      </span>
+    </div>
+  );
+}
+
 export default function TestimoniosSection() {
   const { t } = useLanguage();
   const trackRef = useRef<HTMLDivElement>(null);
@@ -348,26 +358,21 @@ export default function TestimoniosSection() {
   return (
     <section
       id="testimonios"
-      className="border-t border-slate-800/80 py-20 sm:py-24"
+      className="border-t border-neutral-200 py-24 sm:py-28"
     >
       <div className="flex flex-col gap-10 sm:gap-12">
-        <Reveal className="max-w-3xl space-y-5">
-          <div className="flex items-center gap-3">
-            <span className="h-px w-10 bg-emerald-300/40" />
-            <span className="text-sm uppercase tracking-[0.2em] text-emerald-200/80">
-              {t.testimonials.subtitle}
-            </span>
-          </div>
-          <h2 className="font-display text-4xl font-semibold tracking-tight text-slate-50 sm:text-5xl">
+        <div className="max-w-4xl space-y-8">
+          <SectionEyebrow label={t.testimonials.subtitle} />
+          <h2 className="font-sans text-4xl font-black tracking-tighter text-neutral-900 sm:text-5xl lg:text-6xl">
             {t.testimonials.title}
           </h2>
-          <p className="max-w-2xl text-lg leading-relaxed text-slate-300">
+          <p className="max-w-3xl text-base font-light leading-relaxed tracking-[0.04em] text-neutral-600 sm:text-lg">
             {t.testimonials.description}
           </p>
-        </Reveal>
+        </div>
 
         <div
-          className="relative px-4 sm:px-6 md:px-8"
+          className="relative px-0"
           onMouseEnter={() => setIsPaused(true)}
           onMouseLeave={() => setIsPaused(false)}
           onFocus={() => setIsPaused(true)}
@@ -376,15 +381,15 @@ export default function TestimoniosSection() {
           <button
             type="button"
             onClick={() => scrollToIndex(currentIndexRef.current - 1)}
-            className="absolute -left-2 top-1/2 z-10 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border border-white/15 bg-slate-900/80 text-slate-200 shadow-xl backdrop-blur-sm transition hover:bg-white/10 lg:left-0"
+            className="absolute -left-2 top-1/2 z-10 flex h-14 w-14 -translate-y-1/2 items-center justify-center rounded-none border border-white/10 bg-[#0f172a]/95 text-white/90 shadow-2xl transition hover:bg-[#0f172a] lg:-left-6"
             aria-label="Ver testimonio anterior"
           >
             <svg
               viewBox="0 0 24 24"
               fill="none"
               stroke="currentColor"
-              strokeWidth="2"
-              className="h-5 w-5"
+              strokeWidth="1.8"
+              className="h-6 w-6"
             >
               <path strokeLinecap="round" strokeLinejoin="round" d="M15 6l-6 6 6 6" />
             </svg>
@@ -392,15 +397,15 @@ export default function TestimoniosSection() {
           <button
             type="button"
             onClick={() => scrollToIndex(currentIndexRef.current + 1)}
-            className="absolute -right-2 top-1/2 z-10 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border border-white/15 bg-slate-900/80 text-slate-200 shadow-xl backdrop-blur-sm transition hover:bg-white/10 lg:right-0"
+            className="absolute -right-2 top-1/2 z-10 flex h-14 w-14 -translate-y-1/2 items-center justify-center rounded-none border border-white/10 bg-[#0f172a]/95 text-white/90 shadow-2xl transition hover:bg-[#0f172a] lg:-right-6"
             aria-label="Ver testimonio siguiente"
           >
             <svg
               viewBox="0 0 24 24"
               fill="none"
               stroke="currentColor"
-              strokeWidth="2"
-              className="h-5 w-5"
+              strokeWidth="1.8"
+              className="h-6 w-6"
             >
               <path strokeLinecap="round" strokeLinejoin="round" d="M9 6l6 6-6 6" />
             </svg>
@@ -409,7 +414,7 @@ export default function TestimoniosSection() {
           <div
             ref={trackRef}
             onScroll={handleScroll}
-            className="no-scrollbar relative flex snap-x snap-mandatory gap-6 overflow-x-auto pb-6 pt-2"
+            className="no-scrollbar relative flex snap-x snap-mandatory gap-8 overflow-x-auto pb-6 pt-2"
           >
             {LOOPED_TESTIMONIALS.map((testimonial, index) => (
               <a
@@ -418,32 +423,32 @@ export default function TestimoniosSection() {
                 href={testimonial.link}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group flex h-full w-[280px] shrink-0 snap-start flex-col gap-4 rounded-[22px] border border-white/10 bg-white/[0.04] p-6 shadow-2xl backdrop-blur-sm transition-all duration-300 hover:-translate-y-2 hover:border-white/20 hover:bg-white/[0.08] sm:w-[320px] lg:w-[calc((100%-3rem)/3)]"
+                className="group flex h-full w-[300px] shrink-0 snap-start flex-col gap-5 rounded-none border border-white/10 bg-[#0f172a] p-8 shadow-2xl transition-all duration-300 hover:border-white/20 sm:w-[360px] lg:w-[420px]"
                 aria-label={`Ver reseña de ${testimonial.name}`}
               >
-                <div className="flex items-center gap-3">
-                  <div className="relative h-12 w-12 overflow-hidden rounded-full border border-white/15 bg-white/5">
+                <div className="flex items-center gap-4">
+                  <div className="relative h-14 w-14 overflow-hidden rounded-full border border-white/10 bg-white/5">
                     <Image
                       src={testimonial.avatar}
                       alt={`Avatar de ${testimonial.name}`}
                       fill
-                      sizes="48px"
+                      sizes="56px"
                       className="object-cover"
                     />
                   </div>
                   <div className="flex flex-col gap-1">
-                    <div className="flex items-center gap-2 text-sm font-semibold text-slate-100">
-                      <span className="font-display tracking-wide">
+                    <div className="flex items-center gap-2 text-sm font-black uppercase tracking-tighter text-white/90">
+                      <span>
                         {testimonial.name}
                       </span>
                       <span
-                        className="relative block h-3.5 w-5 overflow-hidden rounded-[2px] border border-white/15"
+                        className="relative block h-3.5 w-5 overflow-hidden rounded-none border border-white/10"
                         aria-label={testimonial.country}
                       >
                         <FlagIcon country={testimonial.country} />
                       </span>
                     </div>
-                    <div className="flex items-center gap-1 text-[#facc15]">
+                    <div className="flex items-center gap-1 text-[#D4AF37]">
                       {Array.from({ length: testimonial.stars }).map(
                         (_, starIndex) => (
                           <StarIcon key={starIndex} />
@@ -453,13 +458,13 @@ export default function TestimoniosSection() {
                   </div>
                 </div>
 
-                <p className="text-sm font-light leading-relaxed text-slate-300 sm:text-base">
-                  "{testimonial.text}"
+                <p className="text-sm font-light leading-relaxed tracking-[0.04em] text-white/70 sm:text-base">
+                  &ldquo;{testimonial.text}&rdquo;
                 </p>
 
-                <div className="mt-auto flex items-center justify-between pt-2">
-                  <span className="text-[10px] font-medium uppercase tracking-wider text-slate-500">Fiverr.com</span>
-                  <span className="text-xs italic text-slate-400">
+                <div className="mt-auto flex items-center justify-between border-t border-white/10 pt-4">
+                  <span className="text-[10px] font-black uppercase tracking-[0.2em] text-white/40">Fiverr.com</span>
+                  <span className="text-[11px] font-light italic tracking-widest text-white/40">
                     {testimonial.month}
                   </span>
                 </div>

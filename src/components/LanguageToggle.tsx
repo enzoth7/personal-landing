@@ -2,19 +2,35 @@
 
 import { useLanguage } from "@/src/context/LanguageContext";
 
-export default function LanguageToggle() {
+type LanguageToggleProps = {
+  inline?: boolean;
+  dark?: boolean;
+};
+
+export default function LanguageToggle({ inline = false, dark = false }: LanguageToggleProps) {
   const { language, toggleLanguage } = useLanguage();
+  const wrapperClass = inline
+    ? dark
+      ? "flex items-center rounded-full border border-white/15 bg-[#13223a] p-0.5 sm:p-1"
+      : "flex items-center rounded-full border border-neutral-200 bg-slate-50/95 p-0.5 shadow-sm sm:p-1"
+    : dark
+      ? "fixed right-6 top-6 z-50 flex items-center rounded-full border border-white/15 bg-[#13223a] p-1"
+      : "fixed right-6 top-6 z-50 flex items-center rounded-full border border-neutral-200 bg-slate-50/95 p-1 shadow-sm";
 
   return (
-    <div className="fixed right-6 top-6 z-50 flex items-center rounded-full border border-white/10 bg-black/30 p-1 backdrop-blur">
+    <div className={wrapperClass}>
       <button
         onClick={() => language !== "es" && toggleLanguage()}
-        className={`flex items-center gap-2 rounded-full px-3 py-1.5 text-xs font-medium transition-all ${language === "es"
-            ? "bg-white/15 text-white shadow-sm"
-            : "text-slate-400 hover:text-slate-200"
+        className={`flex items-center gap-1 rounded-full px-2 py-1 text-[10px] font-semibold tracking-[0.08em] transition-all sm:gap-2 sm:px-3 sm:py-1.5 sm:text-xs ${language === "es"
+            ? dark
+              ? "bg-white text-[#0f172a] shadow-sm"
+              : "bg-neutral-950 text-[#f8fafc] shadow-sm"
+            : dark
+              ? "text-white/72 hover:text-white"
+              : "text-slate-500 hover:text-neutral-900"
           }`}
       >
-        <span className="relative block h-3 w-4 overflow-hidden rounded-[1px]">
+        <span className="relative block h-2.5 w-3.5 overflow-hidden rounded-[1px] sm:h-3 sm:w-4">
           <svg viewBox="0 0 640 480" className="h-full w-full object-cover">
             <path fill="#c60b1e" d="M0 0h640v480H0z" />
             <path fill="#ffc400" d="M0 120h640v240H0z" />
@@ -24,12 +40,16 @@ export default function LanguageToggle() {
       </button>
       <button
         onClick={() => language !== "en" && toggleLanguage()}
-        className={`flex items-center gap-2 rounded-full px-3 py-1.5 text-xs font-medium transition-all ${language === "en"
-            ? "bg-white/15 text-white shadow-sm"
-            : "text-slate-400 hover:text-slate-200"
+        className={`flex items-center gap-1 rounded-full px-2 py-1 text-[10px] font-semibold tracking-[0.08em] transition-all sm:gap-2 sm:px-3 sm:py-1.5 sm:text-xs ${language === "en"
+            ? dark
+              ? "bg-white text-[#0f172a] shadow-sm"
+              : "bg-neutral-950 text-[#f8fafc] shadow-sm"
+            : dark
+              ? "text-white/72 hover:text-white"
+              : "text-slate-500 hover:text-neutral-900"
           }`}
       >
-        <span className="relative block h-3 w-4 overflow-hidden rounded-[1px]">
+        <span className="relative block h-2.5 w-3.5 overflow-hidden rounded-[1px] sm:h-3 sm:w-4">
           <svg viewBox="0 0 640 480" className="h-full w-full object-cover">
             <path fill="#bf0a30" d="M0 0h640v480H0z" />
             <path fill="#fff" d="M0 0h640v480H0z" />

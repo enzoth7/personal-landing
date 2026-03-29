@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { IBM_Plex_Sans, Newsreader } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
-import { Analytics } from "@vercel/analytics/next"
 
 const plexSans = IBM_Plex_Sans({
   variable: "--font-plex-sans",
@@ -16,27 +16,42 @@ const newsreader = Newsreader({
 });
 
 export const metadata: Metadata = {
-  title: "Enzo Thome | Arquitecto de Datos y Automatización",
+  title: "Workflow Waves | Arquitectura de Datos y Automatización",
   description:
-    "Estratega en automatización de procesos y optimización de datos. Transformo el caos operativo en sistemas eficientes para PYMES y emprendedores que buscan escalar sin fricciones.",
-  keywords: ["automatización de procesos", "n8n", "sistemas de datos", "optimización de PYMES", "arquitecto de software", "Uruguay", "España"],
+    "Workflow Waves diseña sistemas eficientes y escalables para automatización de procesos, arquitectura de datos y operaciones con menos fricción y más control.",
+  keywords: [
+    "Workflow Waves",
+    "automatización de procesos",
+    "arquitectura de datos",
+    "sistemas eficientes",
+    "sistemas escalables",
+    "n8n",
+    "optimización de PYMES",
+    "Uruguay",
+    "España",
+  ],
+  icons: {
+    icon: "/logo1.png",
+  },
   openGraph: {
-    title: "Enzo Thome | Sistemas y Automatización de Alto Impacto",
-    description: "Multiplicando la eficiencia de tu negocio a través de sistemas inteligentes y deterministas.",
-    url: "https://enzothome.com", // Cambiar por tu dominio final
-    siteName: "Enzo Thome",
+    title: "Workflow Waves | Arquitura de Datos y Automatización",
+    description:
+      "Workflow Waves crea sistemas inteligentes, eficientes y escalables para operaciones que necesitan crecer con precisión.",
+    url: "workflowwaves.vercel.app",
+    siteName: "Workflow Waves",
     locale: "es_UY",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Enzo Thome | Arquitecto de Sistemas",
-    description: "Sistemas escalables para emprendedores y empresas.",
+    title: "Workflow Waves | Arquitectura de Datos y Automatización",
+    description:
+      "Sistemas eficientes y escalables para empresas que buscan crecer con control.",
   },
   robots: {
     index: true,
     follow: true,
-  }
+  },
 };
 
 export default function RootLayout({
