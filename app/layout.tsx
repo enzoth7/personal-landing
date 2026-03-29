@@ -15,38 +15,39 @@ const newsreader = Newsreader({
   weight: ["400", "500", "600", "700"],
 });
 
+const SEO_DESCRIPTION =
+  "Workflow Waves dise\u00f1a sistemas escalables de automatizaci\u00f3n, datos y operaciones para empresas que quieren crecer con control.";
+
 export const metadata: Metadata = {
-  title: "Workflow Waves | Arquitectura de Datos y Automatización",
-  description:
-    "Workflow Waves diseña sistemas eficientes y escalables para automatización de procesos, arquitectura de datos y operaciones con menos fricción y más control.",
+  title: "Workflow Waves | Arquitectura de Datos y Automatizaci\u00f3n",
+  description: SEO_DESCRIPTION,
   keywords: [
     "Workflow Waves",
-    "automatización de procesos",
+    "automatizaci\u00f3n de procesos",
     "arquitectura de datos",
     "sistemas eficientes",
     "sistemas escalables",
     "n8n",
-    "optimización de PYMES",
+    "optimizaci\u00f3n de PYMES",
     "Uruguay",
-    "España",
+    "Espa\u00f1a",
   ],
   icons: {
     icon: "/logo1.png",
   },
   openGraph: {
-    title: "Workflow Waves | Arquitura de Datos y Automatización",
-    description:
-      "Workflow Waves crea sistemas inteligentes, eficientes y escalables para operaciones que necesitan crecer con precisión.",
-    url: "workflowwaves.vercel.app",
+    title: "Workflow Waves | Arquitectura de Datos y Automatizaci\u00f3n",
+    description: SEO_DESCRIPTION,
+    url: "https://workflowwaves.vercel.app",
     siteName: "Workflow Waves",
     locale: "es_UY",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Workflow Waves | Arquitectura de Datos y Automatización",
-    description:
-      "Sistemas eficientes y escalables para empresas que buscan crecer con control.",
+    title: "Workflow Waves | Arquitectura de Datos y Automatizaci\u00f3n",
+    description: SEO_DESCRIPTION,
+    images: ["/logo1.png"],
   },
   robots: {
     index: true,

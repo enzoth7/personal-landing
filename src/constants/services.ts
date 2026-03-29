@@ -20,34 +20,34 @@ export type ServiceDefinition = {
 
 export const SERVICES_DATA: Record<ServiceId, ServiceDefinition> = {
   "DB-025": {
-    images: ["/ejemplos/1z.png"],
+    images: ["/ejemplos/1z.webp"],
     title_es: "Dashboard Unificado de Crecimiento",
     title_en: "Unified Growth Dashboard",
     description_es:
-      "Se acab\u00f3 la duda sobre qu\u00e9 anuncio vende. Visualizaci\u00f3n en tiempo real del ROI cruzando pauta publicitaria con cierres reales de venta.",
+      "Se acabó la duda sobre qué anuncio vende. Visualización en tiempo real del ROI cruzando pauta publicitaria con cierres reales de venta.",
     description_en:
       "Real-time ROI visualization by crossing ad spend data with actual sales closures. Know exactly where your money is going.",
   },
   "AA-112": {
-    images: ["/ejemplos/2z.png"],
-    title_es: "Atenci\u00f3n Instant\u00e1nea de Leads",
+    images: ["/ejemplos/2z.webp"],
+    title_es: "Atención Instantánea de Leads",
     title_en: "Instant Lead Engagement",
     description_es:
-      "Respuesta inmediata 24/7. Tus leads reciben atenci\u00f3n y resoluci\u00f3n de dudas en segundos, eliminando el tiempo de espera por completo.",
+      "Respuesta inmediata 24/7. Tus leads reciben atención y resolución de dudas en segundos, eliminando el tiempo de espera por completo.",
     description_en:
       "Eliminate wait times. Every lead arriving via WhatsApp or web forms receives an instant response to their questions and needs.",
   },
   "WF-009": {
-    images: ["/ejemplos/3z.png"],
-    title_es: "Showroom Virtual y Cat\u00e1logos",
+    images: ["/ejemplos/3z.webp"],
+    title_es: "Showroom Virtual y Catálogos",
     title_en: "Virtual Showroom & Catalogs",
     description_es:
-      "Tu inventario disponible en segundos. Env\u00edo automatizado de fichas t\u00e9cnicas y cat\u00e1logos inteligentes seg\u00fan el inter\u00e9s del cliente.",
+      "Tu inventario disponible en segundos. Envío automatizado de fichas técnicas y catálogos inteligentes según el interés del cliente.",
     description_en:
       "Immediate distribution of technical sheets and catalogs requested via WhatsApp. The system identifies interest and delivers.",
   },
   "AA-147": {
-    images: ["/ejemplos/4z.png"],
+    images: ["/ejemplos/4z.webp"],
     title_es: "Alerta Inteligente para Vendedores",
     title_en: "Smart Sales Alerts",
     description_es:
@@ -56,20 +56,20 @@ export const SERVICES_DATA: Record<ServiceId, ServiceDefinition> = {
       "Direct notifications to the sales team: 'Lead available' or 'New visit'. Includes an executive summary for context.",
   },
   "AA-201": {
-    images: ["/ejemplos/5z.png"],
-    title_es: "Confirmaci\u00f3n Automatizada de Citas",
+    images: ["/ejemplos/5z.webp"],
+    title_es: "Confirmación Automatizada de Citas",
     title_en: "Automated Appointment Booking",
     description_es:
-      "Cero huecos en la agenda. Recordatorios inteligentes que confirman o re-agendan visitas de forma aut\u00f3noma sin intervenci\u00f3n humana.",
+      "Cero huecos en la agenda. Recordatorios inteligentes que confirman o re-agendan visitas de forma autónoma sin intervención humana.",
     description_en:
       "Drastic reduction in no-shows through smart reminders that interact with clients to confirm or reschedule visits.",
   },
   "WF-055": {
-    images: ["/ejemplos/6z.png"],
-    title_es: "Sincronizaci\u00f3n Total de Stock",
+    images: ["/ejemplos/6z.webp"],
+    title_es: "Sincronización Total de Stock",
     title_en: "Total Stock Synchronization",
     description_es:
-      "Vende solo lo que ten\u00e9s. Una actualizaci\u00f3n centralizada impacta en Mercado Libre, web y local f\u00edsico al mismo tiempo.",
+      "Vende solo lo que tenés. Una actualización centralizada impacta en Mercado Libre, web y local físico al mismo tiempo.",
     description_en:
       "Centralized updates that automatically impact all sales portals. End the error of selling out-of-stock items.",
   },
